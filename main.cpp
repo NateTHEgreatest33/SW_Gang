@@ -8,6 +8,10 @@ void printMyName(string myName){
 	cout<<"my name is: "<<myName<<endl;
 }
 
+void addTwo(int inputNum){
+	inputNum+=2;
+	cout<<"The resulting number is: "<< inputNum << endl;
+}
 
 
 int main( int argc, const char* argv[] )
@@ -17,6 +21,7 @@ int main( int argc, const char* argv[] )
   cout<<"hello"<<endl;
 
   printMyName("Nate");
+  addTwo(4);
 
 	return 0;
 }
