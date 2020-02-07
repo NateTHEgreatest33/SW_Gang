@@ -36,7 +36,15 @@ struct coordinates h3[2];
 
 void distTwo(struct coordinates house1, struct coordinates house2){
 	float distance = sqrt(pow(house2.x-house1.x,2)+pow(house2.y-house1.y,2)*1.0);
-	cout<<"The distance between "<<house1.houseName<<" and "<<house2.houseName<<" is "<<distance<<".";
+	cout<<"The distance between "<<house1.houseName<<" and "<<house2.houseName<<" is "<<distance<<"."<<endl;
+}
+
+void printCordsName(struct coordinates cords[], int numOfCordsInArray){
+
+  for(int i = 0; i < numOfCordsInArray; i++){
+    cout<<cords[i].houseName<<endl;
+  }
+
 }
 
 int main( int argc, const char* argv[] )
@@ -63,11 +71,14 @@ int main( int argc, const char* argv[] )
   h3[0].x = 8;
   h3[1].y = 7;
   h3[1].houseName = "sahgdjasgd";
+  h3[0].houseName = "kjahsdkshakdjhas";
 
 //for ( start ; end condition ; what happens after each loop )
 for(int i = 0; i < 2; i++){
   h3[i].x = 0;
 }
+
+printCordsName(h3,2);
 
 
 
