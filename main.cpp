@@ -4,15 +4,20 @@
 #include <vector>
 
 /*-----------------
-1) create struct for child with name, age, and grade
-2) create struct for parent with name age and job
-3) create function that that takes in array of children (should work for any number)
-   and takes in array of parents (should only be 2), and prints out a new line for each child:
-   "CHILDA  who is X years old has parents PARENT1, PARENT2 who are JOB1 and JOB2"
-   
-   the function should also return the number of children. 
+PROBLEM 1
+1) create struct for books: book name, number of pages, auther
+2) create a function that will take in a vector of books (any size) print out the name, auther, and # pages for each book
 
+
+PROBLEM 2
+1) create a struct for people, that includes name, and book they are readying (book reading is empty to start)
+2) create function to assign a book from the book struct, to each person in the people struct
+3) print out who has what book and the name, auther, and # pages for that book
+4) if there are less books then there are people, then for the people that do not get books, print out, "person x did not get a book" (x == name)
 -----------------*/
+
+
+
 
 using namespace std;
 
