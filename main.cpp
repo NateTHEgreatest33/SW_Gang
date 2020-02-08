@@ -59,12 +59,12 @@ struct parent{
 struct child c1[3];
 struct parent p1[2];
 
-void famSum(struct child c1[], struct parent p1[], int numOfChild){
+int famSum(struct child c1[], struct parent p1[], int numOfChild){
 	for (int i = 0; i < numOfChild; i++){
 		cout<<c1[i].name<<" who is "<<c1[i].age<<" years old have parents "<<p1[0].name<<" and "<<p1[1].name<<" who are a "<<p1[0].job<<" and a "<<p1[1].job<<"."<<endl;
 	}
-	//return c1; ?
-	cout<<"The number is children is "<<numOfChild<<"."<<endl;
+	return numOfChild;
+	//cout<<"The number is children is "<<numOfChild<<"."<<endl;
 }
 
 int main( int argc, const char* argv[] )
