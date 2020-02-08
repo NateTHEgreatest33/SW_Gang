@@ -10,8 +10,8 @@ class Person {
         int id;
         string name;
     public:
-        virtual void doJob(); 
-        //TODO: inheritance shit
+        void doJob(); 
+        //wtf ^ why doesn't this have to be virtual?
 
         Person();
         Person(int inputId, string inputString);
@@ -19,6 +19,7 @@ class Person {
         int getId();
         void setName(string inputName);
         string getName();
+        ~Person();
 };
 
 #endif

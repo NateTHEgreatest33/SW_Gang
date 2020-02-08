@@ -7,7 +7,8 @@ using namespace std;
 class SWEngineer : public Person
 {
     public:
-        void SWEngineer::doJob();
+        SWEngineer(int inputId, string inputString);
+        void doJob();
 };
 
 #endif

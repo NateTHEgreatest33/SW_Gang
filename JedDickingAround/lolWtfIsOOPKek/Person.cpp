@@ -5,8 +5,7 @@
 using namespace std;
 
 Person::Person() {
-    id = NULL;
-    name = "";
+
 }
 
 Person::Person(int inputId, string inputString){
@@ -28,4 +27,8 @@ void Person::setName(string inputName) {
 
 string Person::getName() {
     return name;
+}
+
+Person::~Person() {
+    
 }
