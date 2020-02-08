@@ -16,13 +16,30 @@ PROBLEM 2
 2) create function to assign a book from the book struct, to each person in the people struct
 3) print out who has what book and the name, auther, and # pages for that book
 4) if there are less books then there are people, then for the people that do not get books, print out, "person x did not get a book" (x == name)
+
+scratch constraints, jvsnotag: 3 books, 5 people
 -----------------*/
-
-
-
 
 using namespace std;
 
+struct book{
+  string name;
+  string author;
+  int pages;
+};
+
+struct book b1[3];
+
+void bookInfo(vector<struct book> b1){
+  for (int i = 0; i < b1.size(); i++)
+    {
+      cout<<"The name of the book is: "<<b1[i].name<<". The author of the book is: "<<b1[i].author<<". "<<"The book has "<<b1[i].pages<<" pages."<<endl;
+    }
+}
+
+vector<struct book> books; 
+
+/*
 vector<int> ExampleVector;
 
 struct child{
@@ -56,10 +73,11 @@ int famSumBetter(vector<struct child> c1, vector<struct parent> p1){
 
 vector<struct child> children;
 vector<struct parent> parents;
-
+*/
 
 int main( int argc, const char* argv[] )
 {
+  /*
   ExampleVector.push_back(11); //add this to the vector //ex[0]
   ExampleVector.push_back(20); //add this to the vector //ex[1]
   ExampleVector.push_back(30); //add this to the vector //ex[2]
@@ -99,6 +117,29 @@ int main( int argc, const char* argv[] )
   cout<<"old way: "<<endl;
 
   famSum(c1,p1,3);
+  */
+
+  b1[0].name = "Fake News - Vol 1";
+  b1[0].author = "MAGA Inc";
+  b1[0].pages = 69;
+
+  b1[1].name = "How to Become Tesla CEO";
+  b1[1].author = "Not Elon Musk";
+  b1[1].pages = 420;
+
+  b1[2].name = "What if I Don't Want a.out?";
+  b1[2].author = "Jed Macatula";
+  b1[2].pages = 69420;
+
+  for(int i = 0; i < 3; i++)
+  {
+    books.push_back(b1[i]);
+  }
+
+  cout<<"Book Problem Part 1"<<endl;
+  bookInfo(books);
+
+  
 
   return 0;
 }
