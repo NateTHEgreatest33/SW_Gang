@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <math.h>
+#include <vector>
 
 /*-----------------
 1) create struct for child with name, age, and grade
@@ -14,36 +15,9 @@
 -----------------*/
 
 using namespace std;
-/*
-void printMyName(string myName){
-	cout<<"my name is: "<<myName<<endl;
-}
 
-void addTwo(int inputNum){
-	inputNum+=2;
-	cout<<"The resulting number is: "<< inputNum << endl;
-}
+vector<int> ExampleVector;
 
-struct coordinates{
-	float x;
-	float y;
-	string houseName;
-};
-
-struct coordinates h1;
-struct coordinates h2;
-struct coordinates h3[2];
-
-void distTwo(struct coordinates house1, struct coordinates house2){
-	float distance = sqrt(pow(house2.x-house1.x,2)+pow(house2.y-house1.y,2)*1.0);
-	cout<<"The distance between "<<house1.houseName<<" and "<<house2.houseName<<" is "<<distance<<"."<<endl;
-}
-
-void printCordsName(struct coordinates cords[], int numOfCordsInArray){
-  for(int i = 0; i < numOfCordsInArray; i++){
-    cout<<cords[i].houseName<<endl;
-  }
-*/
 struct child{
 	string name;
 	int age;
@@ -64,42 +38,29 @@ int famSum(struct child c1[], struct parent p1[], int numOfChild){
 		cout<<c1[i].name<<" who is "<<c1[i].age<<" years old have parents "<<p1[0].name<<" and "<<p1[1].name<<" who are a "<<p1[0].job<<" and a "<<p1[1].job<<"."<<endl;
 	}
 	return numOfChild;
-	//cout<<"The number is children is "<<numOfChild<<"."<<endl;
 }
+
+int famSumBetter(vector<struct child> c1, vector<struct parent> p1){
+	for (int i = 0; i < c1.size(); i++){
+		cout<<c1[i].name<<" who is "<<c1[i].age<<" years old have parents "<<p1[0].name<<" and "<<p1[1].name<<" who are a "<<p1[0].job<<" and a "<<p1[1].job<<"."<<endl;
+	}
+	return c1.size();
+}
+
+vector<struct child> children;
+vector<struct parent> parents;
+
 
 int main( int argc, const char* argv[] )
 {
-  /*
-  cout << "sup bro" << endl;
-  cout << "not much, bro" << endl;
-  cout<<"hello"<<endl;
+  ExampleVector.push_back(11); //add this to the vector //ex[0]
+  ExampleVector.push_back(20); //add this to the vector //ex[1]
+  ExampleVector.push_back(30); //add this to the vector //ex[2]
+  ExampleVector.size(); //3 items in the array
+  int lastItem = ExampleVector[ExampleVector.size()-1];
+  
 
-  printMyName("Nate");
-  addTwo(4);
-
-  h1.x=10;
-  h1.y=20;
-  h1.houseName="yeetYah";
-
-  h2.x=35;
-  h2.y=45;
-  h2.houseName="yeetNah";
- 
-  distTwo(h1,h2);
-
-  h3[0].x = 8;
-  h3[1].y = 7;
-  h3[1].houseName = "sahgdjasgd";
-  h3[0].houseName = "kjahsdkshakdjhas";
-
-  //for ( start ; end condition ; what happens after each loop )
-  for(int i = 0; i < 2; i++){
-  	h3[i].x = 0;
-  }
-
-  printCordsName(h3,2);
-  */
-
+  ExampleVector.pop_back(); //take off from the vector
   c1[0].name="Jeff";
   c1[0].age=10;
   c1[0].grade=5;
@@ -119,6 +80,16 @@ int main( int argc, const char* argv[] )
   p1[1].name="Boomer";
   p1[1].job="Rapper";
   p1[1].age=50;
+
+  for(int i = 0; i < 3; i++){
+    children.push_back(c1[i]);
+  }
+  for(int i = 0; i < 2; i++){
+    parents.push_back(p1[i]);
+  }
+  famSumBetter(children, parents);
+
+  cout<<"old way: "<<endl;
 
   famSum(c1,p1,3);
 
