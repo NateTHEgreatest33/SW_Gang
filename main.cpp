@@ -30,7 +30,7 @@ struct book{
 
 struct person{
 	string name;
-	string currentBook;
+	string book;
 };
 
 struct book b1[3];
@@ -44,8 +44,13 @@ void bookInfo(vector<struct book> b1){
 
 void assignBook(vector<struct book> b1, vector<struct person> p1){
 	for (int i = 0; i < p1.size(); i++){
-		p1[i].currentBook.push_back(b1[i].name);
-		cout<<p1[i].name<<"'s book is "<<p1[i].currentBook<<endl;
+		if (i < b1.size()){
+			p1[i].book = b1[i].name;
+		}
+		else{
+			p1[i].book = "NO BOOK";
+		}
+		cout<<p1[i].name<<"'s book is "<<p1[i].book<<"."<<endl;
 	}
 }
 
@@ -145,24 +150,29 @@ int main( int argc, const char* argv[] )
   b1[2].pages = 69420;
 
   p1[0].name="James";
-  p1[0].currentBook="";
+  p1[0].book="";
 
   p1[1].name="Boba";
-  p1[1].currentBook="";
+  p1[1].book="";
 
   p1[2].name="Mochi";
-  p1[2].currentBook="";
+  p1[2].book="";
 
   p1[3].name="Tofu";
-  p1[3].currentBook="";
+  p1[3].book="";
 
   p1[4].name="Uni";
-  p1[4].currentBook="";
+  p1[4].book="";
 
-//   for(int i = 0; i < 3; i++)
-//   {
-//     books.push_back(b1[i]);
-//   }
+  for (int i = 0; i < 3; i++)
+  {
+	books.push_back(b1[i]);
+  }
+
+  for (int i = 0; i < 5; i++)
+  {
+	people.push_back(p1[i]);
+  }
 
   cout<<"Book Problem Part 1"<<endl;
   bookInfo(books);
@@ -170,6 +180,6 @@ int main( int argc, const char* argv[] )
   cout<<"Book Problem Part 2"<<endl;
   assignBook(books, people);
   
- 
+
   return 0;
 }
