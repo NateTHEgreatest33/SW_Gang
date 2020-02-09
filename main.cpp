@@ -28,16 +28,29 @@ struct book{
   int pages;
 };
 
+struct person{
+	string name;
+	string currentBook;
+};
+
 struct book b1[3];
+struct person p1[5];
 
 void bookInfo(vector<struct book> b1){
-  for (int i = 0; i < b1.size(); i++)
-    {
+  for (int i = 0; i < b1.size(); i++){
       cout<<"The name of the book is: "<<b1[i].name<<". The author of the book is: "<<b1[i].author<<". "<<"The book has "<<b1[i].pages<<" pages."<<endl;
     }
 }
 
+void assignBook(vector<struct book> b1, vector<struct person> p1){
+	for (int i = 0; i < p1.size(); i++){
+		p1[i].currentBook.push_back(b1[i].name);
+		cout<<p1[i].name<<"'s book is "<<p1[i].currentBook<<endl;
+	}
+}
+
 vector<struct book> books; 
+vector<struct person> people;
 
 /*
 vector<int> ExampleVector;
@@ -131,15 +144,32 @@ int main( int argc, const char* argv[] )
   b1[2].author = "Jed Macatula";
   b1[2].pages = 69420;
 
-  for(int i = 0; i < 3; i++)
-  {
-    books.push_back(b1[i]);
-  }
+  p1[0].name="James";
+  p1[0].currentBook="";
+
+  p1[1].name="Boba";
+  p1[1].currentBook="";
+
+  p1[2].name="Mochi";
+  p1[2].currentBook="";
+
+  p1[3].name="Tofu";
+  p1[3].currentBook="";
+
+  p1[4].name="Uni";
+  p1[4].currentBook="";
+
+//   for(int i = 0; i < 3; i++)
+//   {
+//     books.push_back(b1[i]);
+//   }
 
   cout<<"Book Problem Part 1"<<endl;
   bookInfo(books);
 
+  cout<<"Book Problem Part 2"<<endl;
+  assignBook(books, people);
   
-
+ 
   return 0;
 }
