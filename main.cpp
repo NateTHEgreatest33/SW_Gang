@@ -45,7 +45,7 @@ int displaySymPyramid()
         while(k != 2*i-1)
         {
             cout << "* ";
-            ++k;
+            k++;
         }
         cout << endl;
     }    
